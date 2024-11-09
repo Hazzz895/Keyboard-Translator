@@ -1,0 +1,48 @@
+﻿<Window x:Class="Keyboard_Translator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:clr="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:Keyboard_Translator"
+        mc:Ignorable="d"
+        Title="Keyboard Translator" Height="450" MinHeight="200" MinWidth="250" Width="800" Background="#202020" Closed="Window_Closed">
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="15">
+            <TextBlock Text="Selected Pattern"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+            <ComboBox x:Name="PatternList" Height="32"/>
+                <Button Grid.Column="1" Content="Edit" Click="Button_Click"/>
+            </Grid>
+                <TextBlock Margin="0 10" Text="HotKey"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Content="F5" Click="Button_Click_1" Tag="False" x:Name="HotkeyButton" MouseEnter="HotkeyButton_MouseEnter" MouseLeave="HotkeyButton_MouseLeave"/>
+                    <StackPanel Grid.Column="1">
+                        <TextBlock Text="Modifers:"/>
+                        <WrapPanel VerticalAlignment="Top" Margin="5 0 0 0">
+                            <CheckBox Content="SHIFT" FontSize="20" Margin="5 4 0 0" x:Name="ShiftCheckBox" Checked="ShiftCheckBox_Checked" Unchecked="ShiftCheckBox_Checked"/>
+                            <CheckBox Content="CTRL" FontSize="20" Margin="5 4 0 0" x:Name="CtrlCheckBox" Checked="CtrlCheckBox_Checked" Unchecked="CtrlCheckBox_Checked"/>
+                            <CheckBox Content="ALT" FontSize="20" Margin="5 4 0 0" x:Name="AltCheckBox" Checked="AltCheckBox_Checked" Unchecked="AltCheckBox_Checked"/>
+                            <CheckBox Content="Win" FontSize="20" Margin="5 4 0 0" x:Name="WinCheckBox" Checked="WinCheckBox_Checked" Unchecked="WinCheckBox_Checked"/>
+                        </WrapPanel>
+                    </StackPanel>
+                </Grid>
+                <TextBlock Margin="0 10" Text="Replace Mode"/>
+                <ComboBox x:Name="ModeList" Height="32" SelectedIndex="0">
+                    <clr:String>Auto</clr:String>
+                    <clr:String>From First pattern to Second</clr:String>
+                    <clr:String>From Second pattern to First</clr:String>
+                </ComboBox>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

@@ -1,0 +1,25 @@
+﻿<Window x:Class="Keyboard_Translator.EditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Keyboard_Translator"
+        mc:Ignorable="d"
+        Title="EditWindow" Height="450" Width="800" Background="#202020">
+    <Grid Margin="15">
+        <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+            <StackPanel>
+                <TextBlock Text="First Pattern"/>
+                <TextBox x:Name="FirstPatternBox"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+            <TextBlock Text="Second Pattern"/>
+                <TextBox x:Name="SecondPatternBox"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
